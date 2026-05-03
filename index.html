@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#003580" />
+
+  <!-- ── SEO Meta Tags ─────────────────────────────────── -->
+  <title>JomShuttle — Malaysia's Trusted Shuttle & Airport Transfer Service</title>
+  <meta name="description" content="Book affordable, safe and reliable airport transfers and interstate shuttle rides across Malaysia. Available 24/7. Fixed pricing. Door-to-door service from KLIA/KLIA2." />
+  <meta name="keywords" content="shuttle Malaysia, airport transfer KLIA, interstate transfer, JomShuttle, van rental Malaysia, transport Malaysia" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://jomshuttle.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="JomShuttle — Malaysia's Trusted Shuttle Service" />
+  <meta property="og:description" content="Affordable airport transfers & interstate shuttles across Malaysia. Book on WhatsApp now!" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://jomshuttle.com/" />
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1200&q=80" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="JomShuttle — Malaysia's Trusted Shuttle" />
+  <meta name="twitter:description" content="Book your airport or interstate transfer across Malaysia today." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚐</text></svg>" />
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TransportationService",
+    "name": "JomShuttle",
+    "description": "Airport transfers and interstate shuttle service across Malaysia",
+    "url": "https://jomshuttle.com",
+    "telephone": "+60136788869",
+    "areaServed": "MY",
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceUrl": "https://wa.me/60136788869",
+      "serviceSmsNumber": "+60136788869"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+
+      <!-- Logo -->
+      <a href="#" class="nav-logo" id="nav-logo-link" aria-label="JomShuttle Home">
+        🚐 Jom<span>Shuttle</span>
+      </a>
+
+      <!-- Desktop nav links — rendered by JS -->
+      <div class="nav-links" id="nav-links"></div>
+
+      <!-- Controls -->
+      <div class="nav-right">
+        <button class="toggle-btn" id="lang-btn" aria-label="Toggle language">BM</button>
+        <button class="toggle-btn" id="theme-btn" aria-label="Toggle dark mode">🌙</button>
+        <a href="#booking" class="nav-cta" id="nav-book-btn">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile dropdown -->
+    <div class="mobile-menu container" id="mobile-menu" role="menu"></div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="hero" aria-label="Hero banner">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-content fade-in">
+        <div class="hero-badge" id="hero-badge">✈️ Malaysia's Trusted Shuttle</div>
+        <h1 id="hero-h1">Book Your Ride,<br>We Drive You There</h1>
+        <p id="hero-sub">Affordable, safe &amp; reliable shuttle service across Malaysia</p>
+        <div class="hero-btns">
+          <a href="#" class="btn-wa" id="hero-wa-btn" aria-label="Book on WhatsApp">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <span id="hero-cta">Book on WhatsApp</span>
+          </a>
+          <a href="#states" class="btn-ghost" id="hero-cta2-btn">
+            <span id="hero-cta2">View Destinations</span> ↓
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats" aria-label="Key statistics">
+          <div class="hero-stat">
+            <strong>12+</strong>
+            <span>States Covered</span>
+          </div>
+          <div class="hero-stat">
+            <strong>24/7</strong>
+            <span>Available</span>
+          </div>
+          <div class="hero-stat">
+            <strong>5,000+</strong>
+            <span>Happy Passengers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       QUICK SEARCH BAR
+  ═══════════════════════════════════════════════════════════ -->
+  <div id="search-bar" class="container" aria-label="Quick booking search">
+    <div class="search-grid" id="search-grid">
+      <div class="search-field">
+        <label for="s-pickup">FROM</label>
+        <select id="s-pickup" aria-label="Pickup state"></select>
+      </div>
+      <div class="search-field">
+        <label for="s-dest">TO</label>
+        <select id="s-dest" aria-label="Destination state"></select>
+      </div>
+      <div class="search-field">
+        <label for="s-date">DATE</label>
+        <input type="datetime-local" id="s-date" aria-label="Travel date" />
+      </div>
+      <button class="btn-search" id="s-btn" onclick="App.quickSearch()">Search →</button>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════
+       SERVICES
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="services" class="section" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <h2 id="services-heading" data-i18n="services_h">Our Services</h2>
+      </div>
+      <div class="grid-3" id="services-grid"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       STATES / DESTINATIONS
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="states" class="section" aria-labelledby="states-heading">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <h2 id="states-heading" data-i18n="states_h">Select Your Destination</h2>
+        <p data-i18n="states_sub">Click a state to book your transfer</p>
+      </div>
+      <div class="state-grid" id="states-grid"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       TOUR PACKAGES
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="tours" class="section" aria-labelledby="tours-heading">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <h2 id="tours-heading" data-i18n="tours_h">Tour Packages</h2>
+        <p data-i18n="tours_sub">Fully guided trips — just sit back and enjoy</p>
+      </div>
+      <div class="grid-2" id="tours-grid"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       WHY US
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="why-us" class="section" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <h2 id="why-heading" data-i18n="why_h">Why Choose JomShuttle?</h2>
+      </div>
+      <div class="why-grid" id="why-grid"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       BOOKING FORM
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="booking" class="section" aria-labelledby="booking-heading">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <h2 id="booking-heading" data-i18n="book_h">Book Your Transfer</h2>
+        <p data-i18n="book_sub">Fill the form and we'll contact you instantly</p>
+      </div>
+      <div class="booking-wrap">
+        <form id="booking-form" novalidate aria-label="Booking form">
+
+          <!-- Honeypot — anti-spam, never fill this -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="hp_website">Website</label>
+            <input type="text" id="hp_website" name="hp_website" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="form-row two">
+            <div class="form-group">
+              <label for="f-name" data-i18n="form_name">Full Name</label>
+              <input type="text" id="f-name" name="name" autocomplete="name" required aria-required="true" />
+              <span class="form-error" id="err-name">Please enter your name.</span>
+            </div>
+            <div class="form-group">
+              <label for="f-phone" data-i18n="form_phone">Phone Number</label>
+              <input type="tel" id="f-phone" name="phone" autocomplete="tel" required aria-required="true" placeholder="+601X-XXXXXXX" />
+              <span class="form-error" id="err-phone">Please enter a valid phone number.</span>
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div class="form-group">
+              <label for="f-pickup" data-i18n="form_pickup">Pickup Location</label>
+              <input type="text" id="f-pickup" name="pickup" required aria-required="true" />
+              <span class="form-error" id="err-pickup">Please enter pickup location.</span>
+            </div>
+            <div class="form-group">
+              <label for="f-dest" data-i18n="form_dest">Destination</label>
+              <input type="text" id="f-dest" name="destination" required aria-required="true" />
+              <span class="form-error" id="err-dest">Please enter your destination.</span>
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div class="form-group">
+              <label for="f-date" data-i18n="form_date">Travel Date &amp; Time</label>
+              <input type="datetime-local" id="f-date" name="travel_date" required aria-required="true" />
+              <span class="form-error" id="err-date">Please select a date and time.</span>
+            </div>
+            <div class="form-group">
+              <label for="f-service" data-i18n="form_service">Service Type</label>
+              <select id="f-service" name="service" required aria-required="true">
+                <option value="">-- Select --</option>
+              </select>
+              <span class="form-error" id="err-service">Please select a service.</span>
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div class="form-group">
+              <label for="f-pax" data-i18n="form_pax">No. of Passengers</label>
+              <select id="f-pax" name="passengers">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7-10">7–10</option>
+                <option value="10+">10+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="f-email">Email (Optional)</label>
+              <input type="email" id="f-email" name="email" autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-notes" data-i18n="form_notes">Additional Notes</label>
+              <textarea id="f-notes" name="notes" rows="3"></textarea>
+            </div>
+          </div>
+
+          <div class="form-btns">
+            <button type="button" class="btn-primary" id="btn-wa-submit" aria-label="Send booking via WhatsApp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              <span data-i18n="form_submit">Send via WhatsApp</span>
+            </button>
+            <button type="button" class="btn-secondary" id="btn-email-submit" aria-label="Send booking via Email">
+              📧 <span data-i18n="form_email">Send via Email</span>
+            </button>
+          </div>
+
+          <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════════ -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid" id="footer-grid">
+        <div class="footer-brand">
+          <h3>🚐 Jom<span>Shuttle</span></h3>
+          <p id="footer-tagline">Book now and let us drive you there!</p>
+          <div class="footer-social" id="footer-social" aria-label="Social media links"></div>
+        </div>
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <div id="footer-states"></div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <div id="footer-services"></div>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+60136788869">📞 +6013-678 8869</a>
+          <a href="https://wa.me/60136788869" target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a>
+          <a href="mailto:info@jomshuttle.com">✉️ info@jomshuttle.com</a>
+          <br />
+          <small style="color:rgba(255,255,255,.4)">Operating Hours:<br>24 Hours / 7 Days</small>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> JomShuttle. All rights reserved.</p>
+        <p style="font-size:.78rem; color:rgba(255,255,255,.35)">Made with ❤️ in Malaysia</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════════════
+       MODAL — state destinations
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-title">Select Destination</h3>
+        <button class="modal-close" id="modal-close" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-price" id="modal-price"></p>
+        <div class="modal-destinations" id="modal-destinations"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Scroll-to-top -->
+  <button id="scroll-top" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
